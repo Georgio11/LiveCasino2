@@ -1,0 +1,582 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('fonts/Kanit-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CustomFont2';
+    src: url('fonts/BebasNeue\ Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html,
+body {
+    background: #fff;
+    height: 100%;
+    line-height: 134px;
+    font-size: 90px;
+    font-family: 'CustomFont';
+    font-weight: 400;
+    font-style: normal;
+    overflow: hidden;
+}
+
+/* landing */
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: url(images/bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.back {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text {
+    position: absolute;
+    writing-mode: vertical-rl;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px #fff;
+    color: rgba(255, 255, 255, 0.2);
+    font-family: 'CustomFont2';
+    font-size: calc(100vh / 3.65);
+    line-height: calc(100vh / 4.5);
+    white-space: nowrap;
+    z-index: 4;
+}
+
+.rectangle {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        89.09% 101.64% at 100% 107.93%, 
+        rgba(167, 4, 255, 0.7) 0%,
+        rgba(66, 0, 255, 0.7) 100%);
+    backdrop-filter: blur(3px);
+    width: 45%;
+    height: 100vh;
+    z-index: 3;
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+    padding: 87px 64px 0 0;
+    padding-bottom: calc(20px + 180 * (100vw / 1920));
+}
+
+.logo {
+    width: calc(20px + 130 * (100vw / 1920));
+}
+
+.rectangle p {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: end;
+    line-height: calc(5px + 65 * (100vw / 1920));
+    font-size: calc(5px + 85 * (100vw / 1920));
+}
+
+.rectangle p span {
+    font-size: calc(6px + 40 * (100vw / 1920));
+}
+
+.rectangle a {
+    display: block;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: calc(5px + 45 * (100vw / 1920));
+    font-size: calc(5px + 65 * (100vw / 1920));
+    padding: 32px 34px;
+    background: radial-gradient(
+        157.99% 104.98% at 0% 37.58%, 
+        #FF9000 0%, 
+        #FF5900 100%);
+    border-radius: 15px;
+}
+
+.rectangle a:hover {
+    background: radial-gradient(
+        157.99% 104.98% at 0% 37.58%, 
+        #FF9000 100%, 
+        #FF5900 0%);
+}
+
+.coin {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 2%;
+    width: 65%;
+}
+
+.coin img {
+    width: 100%;
+}
+
+/* media */
+
+@media (max-width: 1600px) {
+    .back {
+        background-position: 60% top;
+    }
+
+    .rectangle {
+        padding-bottom: 120px;
+    }
+
+    .rectangle p {
+        font-size: calc(5px + 75 * (100vw / 1920));
+    }
+}
+
+@media (max-width: 1400px) and (max-height: 1080px) {
+    .coin {
+        top: 2%;
+        left: -4%;
+    }
+}
+
+@media (max-width: 1300px) and (max-height: 900px) {
+    .coin {
+        top: 0;
+        left: 2%;
+    }
+}
+
+@media (max-width: 1200px) and (max-height: 850px) {
+    .coin {
+        top: 0;
+        left: -2%;
+    }
+}
+
+@media (min-width: 912px) and (max-width: 1024px) and (min-height: 1024px) and (max-height: 1368px){
+    .wrapper:after {
+        content: '';
+        position: absolute;
+        top: calc(60% - 100px);
+        width: 100%;
+        height: 100px;
+        background: linear-gradient( rgba(255, 181, 82, 0) 0%, rgba(255, 181, 82, 1) 100%);
+    }
+
+    .wrapper:before {
+        content: '';
+        position: absolute;
+        top: 60%;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient( rgba(255, 181, 82, 1) 0%, rgba(255, 181, 82, 0) 100%);
+    }
+
+    .logo {
+        align-self: flex-end;
+        width: calc(50px + 160 * (100vw / 1920));
+        margin-right: 20px;
+    }
+
+    .back {
+        height: 60%;
+        background-position: 15% top;
+    }
+
+    .text {
+        font-size: calc(50vh / 3.65);
+        line-height: calc(50vh / 4.5);
+    }
+
+    .rectangle {
+        align-items: center;
+        justify-content: start;
+        top: 43vh;
+        bottom: 0;
+        width: 100%;
+        height: 57vh;
+        clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
+        padding: 30px 0 0 0;
+    }
+
+    .rectangle p {
+        text-align: center;
+        line-height: 66px;
+        font-size: 80px;
+        margin: 17% 0 8% 0;
+    }
+
+    .rectangle p span {
+        font-size: 46px;
+    }
+
+    .coin {
+        top: 0;
+        left: 1%;
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 770px) and (max-height: 1366px) {
+    .wrapper:after {
+        content: '';
+        position: absolute;
+        top: calc(60% - 100px);
+        width: 100%;
+        height: 100px;
+        background: linear-gradient( rgba(255, 181, 82, 0) 0%, rgba(255, 181, 82, 1) 100%);
+    }
+
+    .wrapper:before {
+        content: '';
+        position: absolute;
+        top: 60%;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient( rgba(255, 181, 82, 1) 0%, rgba(255, 181, 82, 0) 100%);
+    }
+
+    .logo {
+        align-self: flex-end;
+        width: calc(50px + 160 * (100vw / 1920));
+        margin-right: 20px;
+    }
+
+    .back {
+        height: 60%;
+        background-position: 10% top;
+    }
+
+    .text {
+        font-size: calc(50vh / 3.65);
+        line-height: calc(50vh / 4.5);
+    }
+
+    .rectangle {
+        align-items: center;
+        justify-content: start;
+        top: 43vh;
+        bottom: 0;
+        width: 100%;
+        height: 57vh;
+        clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
+        padding: 30px 0 0 0;
+        padding-bottom: 0;
+    }
+
+    .rectangle p {
+        text-align: center;
+        line-height: 60px;
+        font-size: 72px;
+        margin: 12% 0 8% 0;
+    }
+
+    .rectangle p span {
+        font-size: 40px;
+    }
+
+    .coin {
+        top: 0;
+        left: 4%;
+        width: 90%;
+    }
+}
+
+@media (min-width: 719px) and (max-width: 1024px) and (min-height: 539px) and (max-height: 599px) {
+    .rectangle {
+        padding: 87px 20px 0 0;
+        padding-bottom: 100px;
+    }
+
+    .coin {
+        top: 0;
+        left: -4%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) and (min-height: 720px) and (max-height: 1024px){
+    .wrapper:after {
+        content: '';
+        position: absolute;
+        top: calc(60% - 100px);
+        width: 100%;
+        height: 100px;
+        background: linear-gradient( rgba(255, 181, 82, 0) 0%, rgba(255, 181, 82, 1) 100%);
+    }
+
+    .wrapper:before {
+        content: '';
+        position: absolute;
+        top: 60%;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient( rgba(255, 181, 82, 1) 0%, rgba(255, 181, 82, 0) 100%);
+    }
+
+    .logo {
+        align-self: flex-end;
+        width: calc(50px + 160 * (100vw / 1920));
+        margin-right: 20px;
+    }
+
+    .back {
+        height: 60%;
+        background-position: 10% top;
+    }
+
+    .text {
+        font-size: calc(50vh / 3.65);
+        line-height: calc(50vh / 4.5);
+    }
+
+    .rectangle {
+        align-items: center;
+        justify-content: start;
+        top: 43vh;
+        bottom: 0;
+        width: 100%;
+        height: 57vh;
+        clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
+        padding: 30px 0 0 0;
+        padding-bottom: 0;
+    }
+
+    .rectangle p {
+        text-align: center;
+        line-height: 42px;
+        font-size: 50px;
+        margin: 7% 0 5% 0;
+    }
+
+    .rectangle p span {
+        font-size: 30px;
+    }
+
+    .rectangle a {
+        padding: 20px 34px;
+    }  
+
+    .coin {
+        top: 0;
+        left: 3%;
+        width: 90%;
+    }
+}
+  
+@media (max-width: 480px) and (max-height: 916px) {
+    .wrapper {
+        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100);
+    }
+
+    .wrapper:after {
+        content: '';
+        position: absolute;
+        top: calc(60% - 100px);
+        width: 100%;
+        height: 100px;
+        background: linear-gradient( rgba(255, 181, 82, 0) 0%, rgba(255, 181, 82, 1) 100%);
+    }
+
+    .wrapper:before {
+        content: '';
+        position: absolute;
+        top: 60%;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient( rgba(255, 181, 82, 1) 0%, rgba(255, 181, 82, 0) 100%);
+    }
+
+    .back {
+        background-position: 23% top;
+    }
+
+    .text {
+        -webkit-text-stroke: 1px #fff;
+    }
+
+    .logo {
+        align-self: flex-end;
+        width: calc(50px + 160 * (100vw / 1920));
+        margin-right: 20px;
+    }
+
+    .back {
+        height: 60%;
+    }
+
+    .text {
+        display: none;
+    }
+
+    .rectangle {
+        align-items: center;
+        justify-content: start;
+        top: 43%;
+        bottom: 0;
+        width: 100%;
+        height: 57%;
+        clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
+        padding: 30px 0 0 0;
+        padding-bottom: 0;
+    }
+
+    .rectangle p {
+        text-align: center;
+        line-height: 40px;
+        font-size: 48px;
+        margin: 13% 0 8% 0;
+    }
+
+    .rectangle p span {
+        font-size: 26px;
+    }
+
+    .rectangle a {
+        padding: 20px 34px;
+    }
+
+    .coin {
+        top: -3%;
+        left: -7%;
+        width: 105%;
+        transform: rotate(-25deg);
+    }
+    
+}
+
+@media (max-width: 415px) and (max-height: 916px) {
+    .back {
+        background-position: 26% top;
+    }
+
+    .coin {
+        width: 120%;
+    }
+
+    .rectangle p {
+        line-height: 34px;
+        font-size: 40px;
+        /* margin: 17% 0 12% 0; */
+    }
+
+    .rectangle p span {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 415px) and (max-height: 736px) {
+    .coin {
+        left: -10%;
+        width: 120%;
+    }
+}
+
+@media (max-width: 376px) and (max-height: 915px) {
+    .rectangle p {
+        line-height: 30px;
+        font-size: 38px;
+        margin: 17% 0 12% 0;
+    }
+
+    .rectangle p span {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 376px) and (max-height: 700px) {
+    .back {
+        background-position: 22%;
+    }
+
+    .rectangle p {
+        margin: 9% 0 5% 0;
+    }
+
+    .coin {
+        left: -3%;
+        width: 105%;
+    }
+}
+
+@media (max-width: 320px) and (max-height: 915px) {
+    .rectangle {
+        padding-bottom: 90px;
+    }
+
+    .rectangle p {
+        line-height: 24px;
+        font-size: 32px;
+        margin: 5% 0 5% 0;
+    }
+
+    .rectangle p span{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 925px) and (max-height: 482px) {
+    .rectangle {
+        padding: 40px 20px 0 0;
+        padding-bottom: 90px;
+    }
+
+    .rectangle a {
+        padding: 20px 34px;
+    }
+
+    .coin {
+        left: 3%;
+    }
+}
+
+@media (max-width: 790px) and (max-height: 422px) {
+    .rectangle {
+        padding-bottom: 60px;
+    }
+}
